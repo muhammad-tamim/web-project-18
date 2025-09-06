@@ -36,15 +36,72 @@
             --color-primary: #422AD5;
             --color-primary-content: #18181B;
             --color-secondary-content: #79716B;
-            --color-accent-content: #62748E;
         }
     </style>
 </head>
 
 <body class="font-poppins text-primary-content max-w-[1920px] mx-auto">
 
-    <header class="px-20"></header>
-    <main class="px-20"></main>
+    <header class="">
+        <!-- navbar -->
+        <nav class="bg-gray-100 shadow sticky top-0 z-50">
+            <div class="py-7 px-5 md:px-10 lg:px-14 xl:px-20 flex justify-between items-center">
+
+                <div class="flex items-center gap-1">
+                    <h3 class="font-semibold text-xl">English</h3>
+                    <div><img class="size-5 md:size-10" src="assets/images/logo.png" alt="logo"></div>
+                    <h3 class="font-hind text-xl">জানালা</h3>
+                </div>
+
+                <div class="items-center gap-4 hidden md:flex">
+                    <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <p class="text-sm font-semibold">FAQ</p>
+                    </div>
+                    <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
+                        <i class="fa-solid fa-book-open"></i>
+                        <p class="text-sm font-semibold">Learn</p>
+                    </div>
+                    <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <p class="text-sm font-semibold">Logout</p>
+                    </div>
+                </div>
+
+                <div class="dropdown dropdown-end md:hidden">
+                    <div tabindex="0" role="button" class="btn btn-primary btn-outline btn-circle hover:text-white">
+                        <p><i class="fa-solid fa-bars-staggered"></i></p>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm  dropdown-content  bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-3">
+                        <li>
+                            <div class="flex items-center gap-1 hover:text-white btn  btn-primary btn-outline">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p class="text-sm font-semibold">FAQ</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center gap-1 hover:text-white btn  btn-primary btn-outline">
+                                <i class="fa-solid fa-book-open"></i>
+                                <p class="text-sm font-semibold">Learn</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center gap-1 hover:text-white btn  btn-primary btn-outline">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <p class="text-sm font-semibold">Logout</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="px-20">
+
+    </main>
+
     <footer></footer>
 
     <!-- scripts -->
