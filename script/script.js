@@ -1,3 +1,32 @@
+// login
+
+document.getElementById("get-started-btn").addEventListener("click", (e) => {
+    e.preventDefault()
+
+    const name = document.getElementById("name").value
+    const password = document.getElementById("password").value
+
+    if (name === "") {
+        alert("Please enter your name")
+    }
+    if (password != 123456) {
+        alert("Please enter 123456")
+    }
+
+    document.getElementById("banner").classList.add("hidden")
+    document.getElementById("navbar").classList.remove("hidden")
+    document.getElementById("main").classList.remove("hidden")
+
+    setTimeout(() => {
+        alert("hello")
+    }, 500);
+})
+
+
+
+
+
+
 const loadCategoryButtons = async () => {
     const res = await fetch("https://openapi.programming-hero.com/api/levels/all");
     const data = await res.json("")

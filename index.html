@@ -50,7 +50,7 @@
     <header>
 
         <!-- navbar -->
-        <nav class="bg-gray-100 shadow fixed  z-50 w-full">
+        <nav id="navbar" class="bg-gray-100 shadow fixed  z-50 w-full hidden">
             <div class="py-7 px-5 md:px-10 lg:px-14 xl:px-20 flex justify-between items-center">
 
                 <div class="flex items-center gap-1">
@@ -108,9 +108,9 @@
         </nav>
 
         <!-- hero section -->
-        <section class="py-7 px-5 md:px-10 lg:px-14 xl:px-20 min-h-screen">
-            <div class="pt-20 flex flex-col-reverse lg:flex-row justify-between items-center">
-                <div class="space-y-6 text-center lg:text-start lg:pt-20 xl:pt-0">
+        <section id="banner" class="py-7 px-5 md:px-10 lg:px-14 xl:px-20 ">
+            <div class="flex flex-col lg:flex-row justify-between items-center">
+                <div class="space-y-6 text-center lg:text-start ">
                     <h1 class="pt-10 lg:pt-0 font-bold text-2xl lg:text-5xl"><span class="text-secondary">English</span>
                         is Easy!!
                     </h1>
@@ -120,29 +120,21 @@
                         আপনার
                         দক্ষতা বাড়াতে চান, আমাদের
                         Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
-                    <div>
+                    <form action="">
+                        <div class="flex flex-col gap-4">
+                            <label class="input">
+                                <input id="name" type="text" required placeholder="Enter Your Name" />
+                            </label>
 
-                        <label class="input validator">
-                            <input type="text" required placeholder="Enter Your Name" pattern="[A-Za-z][A-Za-z0-9\-]*"
-                                minlength="3" maxlength="30" title="Only letters, numbers or dash" />
-                        </label>
-                        <p class="validator-hint">
-                            Must be 3 to 30 characters
-                        </p>
+                            <label class="input">
+                                <input id="password" type="password" required placeholder="Password must be 123456" />
+                            </label>
 
-                        <label class="input validator">
-                            <input type="password" required placeholder="................" minlength="8"
-                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                title="Must be more than 8 characters, including number, lowercase letter, uppercase letter" />
-                        </label>
-                        <p class="validator-hint hidden">
-                            Must be more than 8 characters, including
-                        </p>
-
-                    </div>
-                    <div>
-                        <button class="btn btn-primary text-white">Get Started</button>
-                    </div>
+                        </div>
+                        <div class="pt-6">
+                            <button id="get-started-btn" class="btn btn-primary text-white">Get Started</button>
+                        </div>
+                    </form>
                 </div>
                 <div>
                     <img src="assets/images/hero-student.png" alt="hero image">
@@ -151,7 +143,7 @@
         </section>
     </header>
 
-    <main class="py-[200px] space-y-[200px] px-5 md:px-10 lg:px-14 xl:px-20">
+    <main id="main" class="py-[200px] space-y-[200px] px-5 md:px-10 lg:px-14 xl:px-20 hidden">
 
         <!-- vocabularies section -->
         <section id="vocabularies-section" class="space-y-10">
