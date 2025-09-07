@@ -60,7 +60,7 @@ const displayCategoryCard = (categoryData) => {
             </div>
             <div class="flex justify-between items-center gap-1">
                 <i
-                    class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-circle-info"></i>
+                    class="details-btn bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-circle-info"></i>
                 <i
                     class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-volume-high"></i>
         
@@ -69,6 +69,77 @@ const displayCategoryCard = (categoryData) => {
         `
         hideLoadingSpinner()
         cardContainer.appendChild(div)
+
+        div.querySelector(".details-btn").addEventListener("click", () => {
+            loadCategoryDetails(data.id)
+        })
+
+
     }
 }
 
+const loadCategoryDetails = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/word/${id}`)
+    const data = await res.json()
+    displayCategoryDetailsInModal(data.data)
+}
+
+const displayCategoryDetailsInModal = (data) => {
+    const modalDetailsContainer = document.getElementById("modal-details-container")
+
+
+
+    const div = document.createElement("div");
+
+
+
+    div.innerHTML = `
+    
+<div class="space-y-6">
+    <div class="border border-[#EDF7FF] p-6 rounded-xl space-y-8">
+        <h1 class="font-semibold text-4xl">${data.word} (<i class="fa-solid fa-microphone-lines"></i>
+            :${data.pronunciation})
+        </h1>
+        <div>
+            <h2 class="font-semibold text-2xl pb-2.5">Meaning</h2>
+            <p class="font-medium">${data.meaning}</p>
+        </div>
+        <div>
+            <h2 class="font-semibold text-2xl pb-2.5">Example</h2>
+            <p class="font-medium">${data.sentence}</p>
+        </div>
+        <div>
+            <h2 class="font-medium text-2xl pb-2.5">সমার্থক শব্দ গুলো</h2>
+            <div class="synonyms-container flex flex-wrap gap-4">
+
+                        
+                    </div>
+            </div>
+        </div>
+        <div>
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn btn-primary text-white btn-sm">Complete Learning</button>
+            </form>
+        </div>
+    </div>
+
+    `
+    modalDetailsContainer.appendChild(div)
+
+    // add synonyms to the modal
+    const synonymsContainer = document.querySelector(".synonyms-container")
+
+    const synonyms = data.synonyms
+
+    synonyms.forEach(word => {
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+        <p class="py-2 px-3 bg-[#EDF7FF] border border-[#D7E4EF] rounded-md text-xs">${word}</p>
+        `
+        synonymsContainer.appendChild(div)
+    });
+
+    document.getElementById("my_modal_1").showModal()
+}
