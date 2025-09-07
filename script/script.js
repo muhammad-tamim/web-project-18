@@ -21,6 +21,7 @@ const displayCategoryButtons = (categoryButtonsData) => {
 
         // load category data 
         document.getElementById(data.level_no).addEventListener("click", () => {
+            showLoadingSpinner()
             fetch(`https://openapi.programming-hero.com/api/level/${data.level_no}`)
                 .then(res => res.json())
                 .then(data => displayCategoryCard(data.data))
@@ -51,6 +52,7 @@ const displayCategoryCard = (categoryData) => {
             </div>
         </div>
         `
+        hideLoadingSpinner()
         cardContainer.appendChild(div)
     }
 }

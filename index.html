@@ -160,13 +160,22 @@
 
 
             <!-- cards container -->
-            <div id="card-container"
-                class="p-[30px] rounded-3xl bg-[#F8F8F8] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[30px]">
+            <div class="p-[30px] rounded-3xl bg-[#F8F8F8] ">
 
-                <!-- cards fallback content -->
-                <div class="col-span-3 text-center py-16">
-                    <p class="text-[#79716B] pb-3">আপনি এখনো কোন Lesson Select করেন নি</p>
-                    <h1 class="text-[#292524] font-medium text-4xl">একটি Lesson Select করুন।</h1>
+                <!-- loading spinner -->
+                <div id="loading-spinner" class="col-span-3 text-center py-16 hidden">
+                    <span class="loading loading-spinner size-14"></span>
+                </div>
+
+                <div id="card-container" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[30px]">
+
+                    <!-- cards fallback content -->
+                    <div class="col-span-3 text-center py-16">
+                        <p class="text-[#79716B] pb-3">আপনি এখনো কোন Lesson Select করেন নি</p>
+                        <h1 class="text-[#292524] font-medium text-4xl">একটি Lesson Select করুন।</h1>
+                    </div>
+
+
                 </div>
 
 

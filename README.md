@@ -32,6 +32,29 @@ git config --global init.defaultBranch main
 ```
 
 ## Challenges I faced while Building This Project:
+1. I was trying to hide and show loading spinner, but the way i write the code it can't set hide and remove class to the spinner container: 
+```js
+const showLoadingSpinner = () => {
+    const loadingSpinner = document.getElementById("loading-spinner");
+    loadingSpinner.classList.remove("hidden")
+}
+showLoadingSpinner()
+
+const hideLoadingSpinner = () => {
+    const loadingSpinner = document.getElementById("loading-spinner");
+    loadingSpinner.classList.add("hidden");
+}
+```
+but if we write code in the below format it works: 
+```js
+const showLoadingSpinner = () => {
+    const loadingSpinner = document.getElementById("loading-spinner").classList.remove("hidden");
+}
+
+const hideLoadingSpinner = () => {
+    const loadingSpinner = document.getElementById("loading-spinner").classList.add("hidden");;
+}
+```
 
 ## Contact With Me: 
 
