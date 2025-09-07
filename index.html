@@ -185,9 +185,18 @@
             <div class="p-[30px] rounded-3xl bg-[#F8F8F8] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[30px]">
 
                 <!-- cards fallback content -->
-                <div class="col-span-3 text-center py-16">
-                    <p class="text-[#79716B] pb-3">আপনি এখনো কোন Lesson Select করেন ন</p>
+                <div class="col-span-3 text-center py-16 hidden">
+                    <p class="text-[#79716B] pb-3">আপনি এখনো কোন Lesson Select করেন নি</p>
                     <h1 class="text-[#292524] font-medium text-4xl">একটি Lesson Select করুন।</h1>
+                </div>
+
+                <!-- empty category fallback content -->
+                <div class="col-span-3 text-center py-16">
+                    <div class="flex justify-center pb-4">
+                        <img src="assets/images/alert-error.png" alt="">
+                    </div>
+                    <p class="text-[#79716B] pb-3">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+                    <h1 class="text-[#292524] font-medium text-4xl">নেক্সট Lesson এ যান</h1>
                 </div>
 
                 <!-- <div class="p-14 bg-white rounded-xl text-center">
