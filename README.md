@@ -1,12 +1,19 @@
-# Project Name:
+# Project Name: English জানালা
 
 ## Project Description:  
+English জানালা is a web-based vocabulary learning application built with HTML, Tailwind CSS, DaisyUI, and JavaScript. I created this project to practice API fetching, DOM manipulation, event handling, and implementing interactive features like i can log in and log out with proper input validation using SweetAlert, view vocabularies by category with a single click, see full word details by clicking the info icon, and hear the pronunciation of selected words using the browser’s Web Speech API.
 
-## Features:
-  
 ## Live Site Link:
+https://web-project-18.netlify.app/
 
 ## Project Video:
+
+## Features:
+- I can login / logout with proper input validation with sweet alert instead of browser default alert
+- I can see vocabularies based on their categories with just clicking categories button
+- I can see vocabularies full details by just clicking the info icon
+- I can here the pronunciation selected of words by the help of browser web speech api
+
 
 ## What I Learned New while Building This Project:
 1. When i try to init the project i got this warnings: 
@@ -100,6 +107,40 @@ here,
             scroll-behavior: smooth;
         }
     </style>
+```
+4. How to use sweet alert 2 as instead of browser default alert
+```js
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+```
+```js
+document.getElementById("get-started-btn").addEventListener("click", (e) => {
+    e.preventDefault()
+
+    const name = document.getElementById("name").value
+    const password = document.getElementById("password").value
+
+    if (name === "") {
+        alert("Please enter your name")
+        return
+    }
+    if (password != 123456) {
+        alert("Please enter 123456")
+        return
+    }
+
+    document.getElementById("banner").classList.add("hidden")
+    document.getElementById("navbar").classList.remove("hidden")
+    document.getElementById("main").classList.remove("hidden")
+
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Welcome to the English জানালা",
+        showConfirmButton: false,
+        timer: 2000
+    });
+})
 ```
 
 ## Challenges I faced while Building This Project:
