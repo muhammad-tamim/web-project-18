@@ -42,10 +42,10 @@
 
 <body class="font-poppins text-primary-content max-w-[1920px] mx-auto">
 
-    <header class="">
+    <header>
 
         <!-- navbar -->
-        <nav class="bg-gray-100 shadow fixed z-50 w-full">
+        <nav class="bg-gray-100 shadow fixed  z-50 w-full">
             <div class="py-7 px-5 md:px-10 lg:px-14 xl:px-20 flex justify-between items-center">
 
                 <div class="flex items-center gap-1">
@@ -55,14 +55,18 @@
                 </div>
 
                 <div class="items-center gap-4 hidden md:flex">
-                    <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <p class="text-sm font-semibold">FAQ</p>
-                    </div>
-                    <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                        <i class="fa-solid fa-book-open"></i>
-                        <p class="text-sm font-semibold">Learn</p>
-                    </div>
+                    <a href="#faq-section">
+                        <button class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <p class="text-sm font-semibold">FAQ</p>
+                        </button>
+                    </a>
+                    <a href="#vocabularies-section">
+                        <button class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
+                            <i class="fa-solid fa-book-open"></i>
+                            <p class="text-sm font-semibold">Learn</p>
+                        </button>
+                    </a>
                     <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         <p class="text-sm font-semibold">Logout</p>
@@ -145,74 +149,26 @@
     <main class="py-[200px] space-y-[200px] px-5 md:px-10 lg:px-14 xl:px-20">
 
         <!-- vocabularies section -->
-        <section class="space-y-10">
+        <section id="vocabularies-section" class="space-y-10">
             <h1 class="text-center font-bold text-4xl"><span class="text-secondary">Let's</span> Learn Vocabularies</h1>
 
             <!-- category buttons -->
-            <div class="flex flex-wrap justify-center gap-5">
-                <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                    <i class="fa-solid fa-book-open"></i>
-                    <p class="text-sm font-semibold">Lesson -1</p>
-                </div>
-                <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                    <i class="fa-solid fa-book-open"></i>
-                    <p class="text-sm font-semibold">Lesson -1</p>
-                </div>
-                <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                    <i class="fa-solid fa-book-open"></i>
-                    <p class="text-sm font-semibold">Lesson -1</p>
-                </div>
-                <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                    <i class="fa-solid fa-book-open"></i>
-                    <p class="text-sm font-semibold">Lesson -1</p>
-                </div>
-                <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                    <i class="fa-solid fa-book-open"></i>
-                    <p class="text-sm font-semibold">Lesson -1</p>
-                </div>
-                <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                    <i class="fa-solid fa-book-open"></i>
-                    <p class="text-sm font-semibold">Lesson -1</p>
-                </div>
-                <div class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
-                    <i class="fa-solid fa-book-open"></i>
-                    <p class="text-sm font-semibold">Lesson -1</p>
-                </div>
+            <div id="category-button-container" class="flex flex-wrap justify-center gap-5">
+
+
             </div>
 
 
             <!-- cards container -->
-            <div class="p-[30px] rounded-3xl bg-[#F8F8F8] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[30px]">
+            <div id="cards-container"
+                class="p-[30px] rounded-3xl bg-[#F8F8F8] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[30px]">
 
                 <!-- cards fallback content -->
-                <div class="col-span-3 text-center py-16 hidden">
+                <div class="col-span-3 text-center py-16">
                     <p class="text-[#79716B] pb-3">আপনি এখনো কোন Lesson Select করেন নি</p>
                     <h1 class="text-[#292524] font-medium text-4xl">একটি Lesson Select করুন।</h1>
                 </div>
 
-                <!-- empty category fallback content -->
-                <div class="col-span-3 text-center py-16">
-                    <div class="flex justify-center pb-4">
-                        <img src="assets/images/alert-error.png" alt="">
-                    </div>
-                    <p class="text-[#79716B] pb-3">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
-                    <h1 class="text-[#292524] font-medium text-4xl">নেক্সট Lesson এ যান</h1>
-                </div>
-
-                <!-- <div class="p-14 bg-white rounded-xl text-center">
-                    <div class="space-y-6 pb-14">
-                        <h2 class="font-bold text-3xl text-black">Eager</h2>
-                        <p class="font-medium text-xs md:text-xl text-black">Meaning/Pronunciation</p>
-                        <h1 class="font-semibold text-base md:text-3xl text-[#18181B]">"আগ্রহী / ইগার"</h1>
-                    </div>
-                    <div class="flex justify-between items-center gap-1">
-                        <i
-                            class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-circle-info"></i>
-                        <i
-                            class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-volume-high"></i>
-
-                    </div>
-                </div>
                 <div class="p-14 bg-white rounded-xl text-center">
                     <div class="space-y-6 pb-14">
                         <h2 class="font-bold text-3xl text-black">Eager</h2>
@@ -240,55 +196,27 @@
                             class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-volume-high"></i>
 
                     </div>
-                </div> -->
+                </div>
+                <div class="p-14 bg-white rounded-xl text-center">
+                    <div class="space-y-6 pb-14">
+                        <h2 class="font-bold text-3xl text-black">Eager</h2>
+                        <p class="font-medium text-xs md:text-xl text-black">Meaning/Pronunciation</p>
+                        <h1 class="font-semibold text-base md:text-3xl text-[#18181B]">"আগ্রহী / ইগার"</h1>
+                    </div>
+                    <div class="flex justify-between items-center gap-1">
+                        <i
+                            class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-circle-info"></i>
+                        <i
+                            class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-volume-high"></i>
+
+                    </div>
+                </div>
 
             </div>
-
-            <!-- modal -->
-            <!-- Open the modal using ID.showModal() method -->
-            <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
-            <dialog id="my_modal_1" class="modal hidden">
-                <div class="modal-box">
-                    <div class="space-y-6">
-                        <div class="border border-[#EDF7FF] p-6 rounded-xl space-y-8">
-                            <h1 class="font-semibold text-4xl">Eager (<i class="fa-solid fa-microphone-lines"></i>
-                                :ইগার)
-                            </h1>
-                            <div>
-                                <h2 class="font-semibold text-2xl pb-2.5">Meaning</h2>
-                                <p class="font-medium">আগ্রহী</p>
-                            </div>
-                            <div>
-                                <h2 class="font-semibold text-2xl pb-2.5">Example</h2>
-                                <p class="font-medium">The kids were eager to open their gifts.</p>
-                            </div>
-                            <div>
-                                <h2 class="font-medium text-2xl pb-2.5">সমার্থক শব্দ গুলো</h2>
-                                <div class="flex gap-4">
-                                    <p class="py-2 px-3 bg-[#EDF7FF] brder border-[#D7E4EF] rounded-md text-xs">
-                                        Enthusiastic
-                                    <p class="py-2 px-3 bg-[#EDF7FF] brder border-[#D7E4EF] rounded-md text-xs">
-                                        Enthusiastic
-                                    <p class="py-2 px-3 bg-[#EDF7FF] brder border-[#D7E4EF] rounded-md text-xs">
-                                        Enthusiastic
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <form method="dialog">
-                                <!-- if there is a button in form, it will close the modal -->
-                                <button class="btn btn-primary text-white btn-sm">Complete Learning</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </dialog>
         </section>
 
         <!-- faq section -->
-        <section>
+        <section id="faq-section">
             <h1 class="text-center font-bold text-4xl pb-20">
                 <span class="text-secondary">Frequently</span> Asked Questions
             </h1>
@@ -375,6 +303,62 @@
             </div>
         </div>
     </footer>
+
+    <!-- components -->
+
+    <!-- empty category fallback content -->
+    <div class="col-span-3 text-center py-16 hidden">
+        <div class="flex justify-center pb-4">
+            <img src="assets/images/alert-error.png" alt="">
+        </div>
+        <p class="text-[#79716B] pb-3">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+        <h1 class="text-[#292524] font-medium text-4xl">নেক্সট Lesson এ যান</h1>
+    </div>
+
+
+    <!-- modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="my_modal_1" class="modal hidden">
+        <div class="modal-box">
+            <div class="space-y-6">
+                <div class="border border-[#EDF7FF] p-6 rounded-xl space-y-8">
+                    <h1 class="font-semibold text-4xl">Eager (<i class="fa-solid fa-microphone-lines"></i>
+                        :ইগার)
+                    </h1>
+                    <div>
+                        <h2 class="font-semibold text-2xl pb-2.5">Meaning</h2>
+                        <p class="font-medium">আগ্রহী</p>
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-2xl pb-2.5">Example</h2>
+                        <p class="font-medium">The kids were eager to open their gifts.</p>
+                    </div>
+                    <div>
+                        <h2 class="font-medium text-2xl pb-2.5">সমার্থক শব্দ গুলো</h2>
+                        <div class="flex gap-4">
+                            <p class="py-2 px-3 bg-[#EDF7FF] brder border-[#D7E4EF] rounded-md text-xs">
+                                Enthusiastic
+                            <p class="py-2 px-3 bg-[#EDF7FF] brder border-[#D7E4EF] rounded-md text-xs">
+                                Enthusiastic
+                            <p class="py-2 px-3 bg-[#EDF7FF] brder border-[#D7E4EF] rounded-md text-xs">
+                                Enthusiastic
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn btn-primary text-white btn-sm">Complete Learning</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </dialog>
+
+
 
     <!-- scripts -->
     <script src=" utilities/utilities.js"></script>
