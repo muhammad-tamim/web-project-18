@@ -12,15 +12,26 @@ const displayCategoryButtons = (categoryButtonsData) => {
     for (let data of categoryButtonsData) {
         const div = document.createElement("div");
         div.innerHTML = `
-        <button id="${data.level_no}" class="flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
+        <button id="${data.level_no}" class="active flex items-center gap-1 hover:text-white btn btn-primary btn-outline">
             <i class="fa-solid fa-book-open"></i>
             <p class="text-sm font-semibold">Lesson-${data.level_no}</p>
         </button>
         `
         categoryButtonContainer.appendChild(div)
 
-        // load category data 
-        document.getElementById(data.level_no).addEventListener("click", () => {
+        document.getElementById(data.level_no).addEventListener("click", (e) => {
+            // set active style to the button
+            document.querySelectorAll(".active").forEach((btn) => {
+                btn.classList.add("btn-outline")
+                btn.classList.add("hover:text-white")
+                btn.classList.remove("text-white")
+            })
+            e.target.classList.remove("btn-outline")
+            e.target.classList.remove("hover:text-white")
+            e.target.classList.add("text-white")
+
+
+            // load category data
             showLoadingSpinner()
             fetch(`https://openapi.programming-hero.com/api/level/${data.level_no}`)
                 .then(res => res.json())
