@@ -61,8 +61,8 @@ const displayCategoryCard = (categoryData) => {
             <div class="flex justify-between items-center gap-1">
                 <i
                     class="details-btn bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-circle-info"></i>
-                <i
-                    class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-volume-high"></i>
+                <i 
+                    class="voice-btn bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-volume-high"></i>
         
             </div>
         </div>
@@ -72,6 +72,12 @@ const displayCategoryCard = (categoryData) => {
 
         div.querySelector(".details-btn").addEventListener("click", () => {
             loadCategoryDetails(data.id)
+        })
+
+        div.querySelector(".voice-btn").addEventListener("click", () => {
+            const utterance = new SpeechSynthesisUtterance(data.word);
+            utterance.lang = 'en-EN';
+            window.speechSynthesis.speak(utterance);
         })
 
 
