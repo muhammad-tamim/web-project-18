@@ -32,6 +32,67 @@ git config --global init.defaultBranch main
 ```
 
 ## Challenges I faced while Building This Project:
+1. I firstly try to access a click details button using id like this: 
+```js
+for (let data of categoryData) {
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <div class="p-14 bg-white rounded-xl text-center">
+            <div class="space-y-6 pb-14">
+                <h2 class="font-bold text-3xl text-black">${data.word}</h2>
+                <p class="font-medium text-xs md:text-xl text-black">Meaning/Pronunciation</p>
+                <h1 class="font-semibold text-base md:text-3xl text-[#18181B]">"${data.meaning} / ${data.pronunciation}"</h1>
+            </div>
+            <div class="flex justify-between items-center gap-1">
+                <i id="${data.id}"
+                    class=" bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-circle-info"></i>
+                <i
+                    class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-volume-high"></i>
+        
+            </div>
+        </div>
+        `
+        hideLoadingSpinner()
+        cardContainer.appendChild(div)
+
+        document.getElementById(data.id).addEventListener((click), () => {
+            console.log(data.id)
+        })
+
+
+    }
+``` 
+
+but it not worked because of  duplication id name,. so i use querySelector instead of id and it worked:
+```js
+for (let data of categoryData) {
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <div class="p-14 bg-white rounded-xl text-center">
+            <div class="space-y-6 pb-14">
+                <h2 class="font-bold text-3xl text-black">${data.word}</h2>
+                <p class="font-medium text-xs md:text-xl text-black">Meaning/Pronunciation</p>
+                <h1 class="font-semibold text-base md:text-3xl text-[#18181B]">"${data.meaning} / ${data.pronunciation}"</h1>
+            </div>
+            <div class="flex justify-between items-center gap-1">
+                <i
+                    class="details-btn bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-circle-info"></i>
+                <i
+                    class="bg-[#1A91FF10] rounded-xl p-4 text-[#374957] cursor-pointer text-2xl fa-solid fa-volume-high"></i>
+        
+            </div>
+        </div>
+        `
+        hideLoadingSpinner()
+        cardContainer.appendChild(div)
+
+        div.querySelector(".details-btn").addEventListener("click", () => {
+            console.log(data.id)
+        })
+
+
+    }
+``` 
 
 ## Contact With Me: 
 
