@@ -8,23 +8,28 @@ document.getElementById("get-started-btn").addEventListener("click", (e) => {
 
     if (name === "") {
         alert("Please enter your name")
+        return
     }
     if (password != 123456) {
         alert("Please enter 123456")
+        return
     }
 
     document.getElementById("banner").classList.add("hidden")
     document.getElementById("navbar").classList.remove("hidden")
     document.getElementById("main").classList.remove("hidden")
 
-    setTimeout(() => {
-        alert("Welcome")
-    }, 500);
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Welcome to the English জানালা",
+        showConfirmButton: false,
+        timer: 2000
+    });
 })
 
 
 // logout
-
 document.getElementById("logout").addEventListener("click", () => {
     document.getElementById("banner").classList.remove("hidden")
     document.getElementById("navbar").classList.add("hidden")
