@@ -18,8 +18,17 @@ document.getElementById("get-started-btn").addEventListener("click", (e) => {
     document.getElementById("main").classList.remove("hidden")
 
     setTimeout(() => {
-        alert("hello")
+        alert("Welcome")
     }, 500);
+})
+
+
+// logout
+
+document.getElementById("logout").addEventListener("click", () => {
+    document.getElementById("banner").classList.remove("hidden")
+    document.getElementById("navbar").classList.add("hidden")
+    document.getElementById("main").classList.add("hidden")
 })
 
 
