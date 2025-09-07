@@ -8,6 +8,10 @@ https://web-project-18.netlify.app/
 
 ## Project Video:
 
+
+https://github.com/user-attachments/assets/f15db262-902f-448c-9189-f55f750269fd
+
+
 ## Features:
 - I can login / logout with proper input validation with sweet alert instead of browser default alert
 - I can see vocabularies based on their categories with just clicking categories button
