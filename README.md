@@ -93,6 +93,15 @@ here,
 - ```utterance.lang = 'en-EN'``` = This sets the language/accent of the voice. ('en-US', 'bn-BD' (Bangla), 'hi-IN' (Hindi), etc.)
 - ```window.speechSynthesis.speak(utterance);``` = speechSynthesis is the speech engine built into the browser and .speak(utterance) tells the browser: “Hey, read this text out loud using the system’s text-to-speech voice.”
  
+3. how to implement smooth scroll behavior
+```css
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+```
+
 ## Challenges I faced while Building This Project:
 1. I firstly try to access a click details button using id like this: 
 ```js
