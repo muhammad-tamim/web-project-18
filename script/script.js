@@ -34,6 +34,21 @@ const displayCategoryCard = (categoryData) => {
 
     cardContainer.innerHTML = "";
 
+    if (categoryData.length === 0) {
+        cardContainer.innerHTML = `
+    <div class="col-span-3 text-center py-16 ">
+        <div class="flex justify-center pb-4">
+            <img src="assets/images/alert-error.png" alt="">
+        </div>
+        <p class="text-[#79716B] pb-3">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+        <h1 class="text-[#292524] font-medium text-4xl">নেক্সট Lesson এ যান</h1>
+    </div>
+        `
+
+        hideLoadingSpinner()
+        return
+    }
+
     for (let data of categoryData) {
         const div = document.createElement("div");
         div.innerHTML = `
@@ -56,3 +71,4 @@ const displayCategoryCard = (categoryData) => {
         cardContainer.appendChild(div)
     }
 }
+
